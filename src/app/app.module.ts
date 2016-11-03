@@ -11,10 +11,7 @@ import { FirebaseComponent } from './firebase/firebase.component';
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyA9lIOrC2W7wLPG3xOWNjRKD2ilbz9MDY0",
-    authDomain: "ux-angular.firebaseapp.com",
-    databaseURL: "https://ux-angular.firebaseio.com",
-    storageBucket: "ux-angular.appspot.com",
+  // Enter your firebase info here...
 };
 
 
