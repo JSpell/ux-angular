@@ -1,5 +1,19 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.$value}}
-  </li>
-</ul>
+<p *ngIf="!itemsLoaded">Loading data!</p>
+<div *ngIf="itemsLoaded">
+  <app-add-item [currentKeyValue]="numberOfItems"></app-add-item>
+  <input type="checkbox" id="displayKeyControl" class="display-key-control">
+  <div class="item-info">
+    <span>You have a total of {{numberOfItems}} items.</span>
+    <label [class.hide]="numberOfItems < 1" for="displayKeyControl" class="display-key-control_text">Item Keys</label>
+  </div>
+  <ul class="item-list">
+    <li class="text" *ngFor="let item of items | async" class="item">
+      <div class="item-value">{{item.$value}}</div>
+      <div class="item-key">
+        {{item.$key}}
+      </div>
+      <span (click)="removeItem(item.$key)" class="remove-item">Remove this item</span>
+    </li>
+  </ul>
+</div>
+

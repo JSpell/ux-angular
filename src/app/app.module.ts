@@ -5,13 +5,18 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
 import { FirebaseComponent } from './firebase/firebase.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import { RemoveItemComponent } from './remove-item/remove-item.component';
 
+import { FirebaseService } from './database.service';
 
 
 export const firebaseConfig = {
-  // Enter your firebase info here...
+    apiKey: "AIzaSyA9lIOrC2W7wLPG3xOWNjRKD2ilbz9MDY0",
+    authDomain: "ux-angular.firebaseapp.com",
+    databaseURL: "https://ux-angular.firebaseio.com",
+    storageBucket: "ux-angular.appspot.com",
 };
 
 
@@ -19,7 +24,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    FirebaseComponent
+    FirebaseComponent,
+    AddItemComponent,
+    RemoveItemComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

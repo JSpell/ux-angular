@@ -1,0 +1,5 @@
+<input type="text" #key placeholder="Enter item key." (keydown)="keyDownFunction($event)" [(ngModel)]="this.newKey">
+<input type="text" #newItem placeholder="Enter item name." (keydown)="keyDownFunction($event)" [(ngModel)]="this.newName">
+
+<button (click)="addItem()">Add Item</button>
+<button (click)="addObject()">Add/Update Item</button>
