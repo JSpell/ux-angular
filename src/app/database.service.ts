@@ -6,7 +6,6 @@ export class FirebaseService {
 
   public itemsList: FirebaseListObservable<any[]>;
   public itemsObject: FirebaseObjectObservable<any[]>;
-  public childDataPath: any;
 
   constructor(af: AngularFire) {
     this.itemsList = af.database.list('/items');
@@ -16,21 +15,22 @@ export class FirebaseService {
   addListItem(entry) {
     if(entry != undefined && entry.trim() != "") {
       this.itemsList.push(entry.trim());
-      return(entry = "");
+      return true;
     }
     else{
-      alert("Sorry!  We cannot save an empty item.");
+      return false;
     }
   }
 
   addObjectItem(key:any, value:any) {
-    if(key != undefined) {
+    if(key != undefined && key.trim() != "" && value != undefined && value.trim() != "") {
       var newObject = {};
       newObject[key] = value;
       this.itemsObject.update(newObject);
+      return true;
     }
     else{
-      alert("A key and value are required");
+      return false;
     }
   }
 }

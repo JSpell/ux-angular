@@ -29,14 +29,18 @@
     display: none;
 }
 
-.display-key-control:checked ~ .item-list .item-key {
-    display: inline-block;
-}
+.display-key-control{
+    &_text:before {
+        content: "Show ";
+    }
 
-.display-key-control_text:before {
-    content: "Show ";
-}
+    &:checked {
+        ~ .item-list .item-key {
+            display: inline-block;
+        }
 
-.display-key-control:checked ~ .item-info .display-key-control_text:before {
-    content: "Hide ";
+        ~ .item-info .display-key-control_text:before {
+            content: "Hide ";
+        }
+    }
 }

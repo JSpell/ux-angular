@@ -4,7 +4,7 @@ import { FirebaseService } from '../database.service';
 @Component({
   selector: 'app-firebase',
   templateUrl: './displayContent.component.html',
-  styleUrls: ['./displayContent.component.css'],
+  styleUrls: ['./displayContent.component.scss'],
 })
 export class DisplayContentComponent implements OnInit {
 
@@ -17,7 +17,6 @@ export class DisplayContentComponent implements OnInit {
     
     // get data from Firebase as a list and add it to this.items
     this.items = fbs.itemsList;
-    fbs.childDataPath = "items";
 
     // subscribe to the list observable and watch for it to be loaded.
     this.items.subscribe(result => {

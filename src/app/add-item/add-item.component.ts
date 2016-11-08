@@ -4,7 +4,7 @@ import { FirebaseService } from '../database.service';
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
-  styleUrls: ['./add-item.component.css']
+  styleUrls: ['./add-item.component.scss']
 })
 
 export class AddItemComponent implements OnInit {
@@ -15,23 +15,41 @@ export class AddItemComponent implements OnInit {
   public newName: string;
   public newKey: any;
   public customItem: any;
+  public added: boolean;
 
   constructor(public fbs: FirebaseService) {
     this.items = fbs.itemsList;
     this.itemsObject = fbs.itemsObject;
+    this.added = true;
   }
 
   addItem() {
-    this.newName = this.fbs.addListItem(this.newName);
+    if(this.added = this.fbs.addListItem(this.newName))
+    {
+      this.newName = "";
+    }
   }
 
   addObject() {
-    this.fbs.addObjectItem(this.newKey, this.newName);
+    if(this.fbs.addObjectItem(this.newKey, this.newName)){
+      this.newKey = "";
+      this.newName = "";
+    }
+    else{
+      alert("Both a key & name are required");
+    }
   }
 
   keyDownFunction(event) {
     if(event.keyCode == 13) {
       this.addItem();
+    }
+  }
+
+  generateRandomEntries() {
+    var rand = Math.floor(Math.random() * 5) + 5;
+    for( var x=1; x < rand; x++ ){
+      this.fbs.addListItem("Random Item "+x);
     }
   }
 
