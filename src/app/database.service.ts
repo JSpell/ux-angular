@@ -6,6 +6,7 @@ export class FirebaseService {
 
   public itemsList: FirebaseListObservable<any[]>;
   public itemsObject: FirebaseObjectObservable<any[]>;
+  public childDataPath: any;
 
   constructor(af: AngularFire) {
     this.itemsList = af.database.list('/items');

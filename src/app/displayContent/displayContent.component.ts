@@ -3,10 +3,10 @@ import { FirebaseService } from '../database.service';
 
 @Component({
   selector: 'app-firebase',
-  templateUrl: './firebase.component.html',
-  styleUrls: ['./firebase.component.css'],
+  templateUrl: './displayContent.component.html',
+  styleUrls: ['./displayContent.component.css'],
 })
-export class FirebaseComponent implements OnInit {
+export class DisplayContentComponent implements OnInit {
 
   //set items as a firebase list observable
   items: any;  
@@ -17,6 +17,7 @@ export class FirebaseComponent implements OnInit {
     
     // get data from Firebase as a list and add it to this.items
     this.items = fbs.itemsList;
+    fbs.childDataPath = "items";
 
     // subscribe to the list observable and watch for it to be loaded.
     this.items.subscribe(result => {
@@ -26,7 +27,6 @@ export class FirebaseComponent implements OnInit {
   }
 
   removeItem(key) {
-    //alert(key);
     this.items.remove(key);
   }
 

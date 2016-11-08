@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
-import { FirebaseComponent } from './firebase/firebase.component';
+import { DisplayContentComponent } from './displayContent/displayContent.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { RemoveItemComponent } from './remove-item/remove-item.component';
 
@@ -24,7 +24,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    FirebaseComponent,
+    DisplayContentComponent,
     AddItemComponent,
     RemoveItemComponent
   ],
