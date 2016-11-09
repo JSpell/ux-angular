@@ -31,12 +31,9 @@ export class AddItemComponent implements OnInit {
   }
 
   addObject() {
-    if(this.fbs.addObjectItem(this.newKey, this.newName)){
+    if(this.added = this.fbs.addObjectItem(this.newKey, this.newName)){
       this.newKey = "";
       this.newName = "";
-    }
-    else{
-      alert("Both a key & name are required");
     }
   }
 

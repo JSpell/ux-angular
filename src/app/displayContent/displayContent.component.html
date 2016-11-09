@@ -1,11 +1,17 @@
 <p *ngIf="!itemsLoaded">Loading data!</p>
 <div *ngIf="itemsLoaded">
+  <div class="viewing-list">You are viewing the
+    <select (change)="getItems($event.target.value)">
+      <option value="items">Items</option>
+      <option value="user-data">User Data</option>
+    </select>
+    list.
+  </div>
   <app-add-item [currentKeyValue]="numberOfItems"></app-add-item>
   <input type="checkbox" id="displayKeyControl" class="display-key-control">
   <div class="item-info">
     <span>You have a total of {{numberOfItems}} items.</span>
     <label [class.hide]="numberOfItems < 1" for="displayKeyControl" class="display-key-control_text">Item Keys</label>
-    <button (click)="getItems('user-data')">change list</button>
   </div>
   <ul class="item-list">
     <li class="text" *ngFor="let item of items | async" class="item">
