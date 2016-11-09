@@ -14,19 +14,21 @@ export class DisplayContentComponent implements OnInit {
   numberOfItems: number;
 
   constructor(private fbs: FirebaseService) { 
-    
-    // get data from Firebase as a list and add it to this.items
-    this.items = fbs.itemsList;
-
-    // subscribe to the list observable and watch for it to be loaded.
-    this.items.subscribe(result => {
-      this.itemsLoaded = true;
-      this.numberOfItems = result.length;
-    });
+    this.getItems("items");
   }
 
   removeItem(key) {
     this.items.remove(key);
+  }
+
+  getItems(node) {
+    this.fbs.connectToNode(node);
+    this.items = this.fbs.itemsList;
+
+    this.items.subscribe(result => {
+      this.itemsLoaded = true;
+      this.numberOfItems = result.length;
+    });
   }
 
   ngOnInit() {

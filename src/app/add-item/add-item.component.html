@@ -1,8 +1,8 @@
-<!--<input type="text" #key placeholder="Enter item key." (keydown)="keyDownFunction($event)" [(ngModel)]="this.newKey">-->
+<input type="text" #key placeholder="Enter item key." (keydown)="keyDownFunction($event)" [(ngModel)]="this.newKey">
 <input type="text" #newItem placeholder="Enter item name." (keydown)="keyDownFunction($event)" [(ngModel)]="this.newName">
 
-<button (click)="addItem()" [disabled]="newItem.value.length < 1">Add Item</button>
-<!--<button (click)="addObject()" [disabled]="newItem.value.length < 1 || key.value.length < 1">Add/Update Item</button>-->
+<button (click)="addItem()" [disabled]="newItem.value.length < 1 || key.value.length > 0">Add Item</button>
+<button (click)="addObject()" [disabled]="newItem.value.length < 1 || key.value.length < 1">Add/Update Item</button>
 
 <div class="error" [class.show-error]="!this.added">
     <p class="error-text">

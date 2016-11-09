@@ -7,9 +7,11 @@ export class FirebaseService {
   public itemsList: FirebaseListObservable<any[]>;
   public itemsObject: FirebaseObjectObservable<any[]>;
 
-  constructor(af: AngularFire) {
-    this.itemsList = af.database.list('/items');
-    this.itemsObject = af.database.object('/items');
+  constructor(public af: AngularFire) {}
+
+  connectToNode(node) {
+    this.itemsList = this.af.database.list('/' + node);
+    this.itemsObject = this.af.database.object('/' + node);
   }
 
   addListItem(entry) {

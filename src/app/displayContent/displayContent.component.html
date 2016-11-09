@@ -5,6 +5,7 @@
   <div class="item-info">
     <span>You have a total of {{numberOfItems}} items.</span>
     <label [class.hide]="numberOfItems < 1" for="displayKeyControl" class="display-key-control_text">Item Keys</label>
+    <button (click)="getItems('user-data')">change list</button>
   </div>
   <ul class="item-list">
     <li class="text" *ngFor="let item of items | async" class="item">
