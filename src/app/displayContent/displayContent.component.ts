@@ -12,6 +12,7 @@ export class DisplayContentComponent implements OnInit {
   items: any;  
   itemsLoaded: boolean;
   numberOfItems: number;
+  thisObj: any;
 
   constructor(private fbs: FirebaseService) { 
     this.getItems("items");
@@ -29,6 +30,10 @@ export class DisplayContentComponent implements OnInit {
       this.itemsLoaded = true;
       this.numberOfItems = result.length;
     });
+  }
+
+  typeOf(val) {
+    console.log(typeof(val));
   }
 
   ngOnInit() {

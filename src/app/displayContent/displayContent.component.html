@@ -14,11 +14,14 @@
     <label [class.hide]="numberOfItems < 1" for="displayKeyControl" class="display-key-control_text">Item Keys</label>
   </div>
   <ul class="item-list">
-    <li class="text" *ngFor="let item of items | async" class="item">
-      <div class="item-value">{{item.$value}}</div>
-      <div class="item-key">
-        {{item.$key}}
-      </div>
+    <li *ngFor="let item of items | async" class="item">
+      <simple-item *ngIf="item.$value" [item]="item"></simple-item>
+      <template [ngIf]="!item.$value">
+        <div class="item-value">{{item.name}}</div>
+        <div class="item-value">{{item.age}}</div>
+        <div class="item-value">{{item.quote}}</div>
+        <div class="item-key">{{item.$key}}</div>
+      </template>
       <span (click)="removeItem(item.$key)" class="remove-item">Remove this item</span>
     </li>
   </ul>

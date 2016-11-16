@@ -10,6 +10,8 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { RemoveItemComponent } from './remove-item/remove-item.component';
 
 import { FirebaseService } from './database.service';
+import { SimpleItemComponent } from './simple-item/simple-item.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 
 export const firebaseConfig = {
@@ -26,7 +28,9 @@ export const firebaseConfig = {
     AppComponent,
     DisplayContentComponent,
     AddItemComponent,
-    RemoveItemComponent
+    RemoveItemComponent,
+    SimpleItemComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
