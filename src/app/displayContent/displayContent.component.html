@@ -15,7 +15,10 @@
   </div>
   <ul class="item-list">
     <li *ngFor="let item of items | async" class="item">
-      <simple-item *ngIf="item.$value" [item]="item"></simple-item>
+      <template [ngIf]="item.$value">
+        <div class="item-value">{{item.$value}}</div>
+        <div class="item-key">{{item.$key}}</div>
+      </template>
       <template [ngIf]="!item.$value">
         <div class="item-value">{{item.name}}</div>
         <div class="item-value">{{item.age}}</div>
