@@ -9,8 +9,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 ## Setup
 
 Clone this repo.
+
 Run `npm install`
+
 Be sure that you've run the prereq install above!
+
 Start your dev server with this info below. 
 
 ## Development server
