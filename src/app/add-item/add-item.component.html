@@ -3,8 +3,11 @@
 
 <button (click)="addItem()" [disabled]="newItem.value.length < 1 || key.value.length > 0">Add Item</button>
 <button (click)="addObject()" [disabled]="newItem.value.length < 1 || key.value.length < 1">Add/Update Item</button>
-<button (click)="generateRandomEntries()">Click for random entries</button>
-
+<button (click)="generateRandomEntries()" [disabled]="randomValueCount > 100">
+    <span *ngIf="randomValueCount < 100">Click for random entries</span>
+    <span *ngIf="randomValueCount > 100">The random enty total has been reached!</span>
+</button>
+{{randomValueCount}}
 <div class="error" [class.show-error]="!this.added">
     <p class="error-text">
         Sorry. Blank entries are not allowed.

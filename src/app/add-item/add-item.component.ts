@@ -16,6 +16,7 @@ export class AddItemComponent implements OnInit {
   public newKey: any;
   public customItem: any;
   public added: boolean;
+  randomValueCount: number = 0;
 
   constructor(public fbs: FirebaseService) {
     this.items = fbs.itemsList;
@@ -45,9 +46,10 @@ export class AddItemComponent implements OnInit {
 
   generateRandomEntries() {
     var rand = Math.floor(Math.random() * 5) + 5;
-    for( var x=1; x < rand; x++ ){
+    for(var x=1; x < rand; x++ ){
       this.fbs.addListItem("Random Item "+x);
     }
+    this.randomValueCount = this.randomValueCount + rand;
   }
 
   ngOnInit() {
