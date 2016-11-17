@@ -7,7 +7,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { DisplayContentComponent } from './displayContent/displayContent.component';
 import { AddItemComponent } from './add-item/add-item.component';
-import { RemoveItemComponent } from './remove-item/remove-item.component';
 
 import { FirebaseService } from './database.service';
 import { SimpleItemComponent } from './simple-item/simple-item.component';
@@ -22,13 +21,11 @@ export const firebaseConfig = {
 };
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     DisplayContentComponent,
     AddItemComponent,
-    RemoveItemComponent,
     SimpleItemComponent,
     UserInfoComponent
   ],

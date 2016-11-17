@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../database.service';
 
 @Component({
-  selector: 'app-firebase',
+  selector: 'display-content',
   templateUrl: './displayContent.component.html',
   styleUrls: ['./displayContent.component.scss'],
 })
