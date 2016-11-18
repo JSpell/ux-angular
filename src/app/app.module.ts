@@ -11,6 +11,7 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { FirebaseService } from './database.service';
 import { SimpleItemComponent } from './simple-item/simple-item.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { HttpReqComponent } from './http-req/http-req.component';
 
 
 export const firebaseConfig = {
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     DisplayContentComponent,
     AddItemComponent,
     SimpleItemComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    HttpReqComponent
   ],
   imports: [
     BrowserModule,
