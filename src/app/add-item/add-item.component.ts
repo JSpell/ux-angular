@@ -45,7 +45,7 @@ export class AddItemComponent implements OnInit {
 
   generateRandomEntries() {
     var rand = Math.floor(Math.random() * 5) + 5;
-    for( var x=1; x < rand; x++ ){
+    for(var x=1; x < rand; x++ ){
       this.fbs.addListItem("Random Item "+x);
     }
   }
