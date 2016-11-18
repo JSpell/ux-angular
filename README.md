@@ -10,11 +10,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 Clone this repo.
 
-Run `npm install`
+CD into the cloned directory (ux-angular if not changed) then run `npm install`.
 
 Be sure that you've run the prereq install above!
 
-Start your dev server with this info below. 
+Start your dev server with the info below. 
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
